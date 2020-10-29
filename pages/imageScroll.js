@@ -2,29 +2,24 @@ import React from "react";
 import ImageToggleOnScroll from "../src/ImageToggleOnScroll";
 
 const ImageChangeOnScroll = () => {
+
+
     return (
-        <>
         <div>
-            <ImageToggleOnScroll 
-            primaryImage="/static/bw/img1.png"
-            secondaryImage="/static/bw/img3.jpg"/>
+            {
+                [1, 2, 1, 2, 1, 2].map(
+                    (speakerId, index) => {
+                        return (
+                            <div key={index}>
+                                <ImageToggleOnScroll 
+                                    primaryImage={`/static/bw/img${speakerId}.png`}
+                                    secondaryImage={`/static/color/img${speakerId}.jpg`}/>
+                            </div>
+                        )
+                    }
+                )
+            }
         </div>
-        <div>
-            <ImageToggleOnScroll 
-            primaryImage="/static/bw/img2.png"
-            secondaryImage="/static/bw/img4.jpg"/>
-        </div>
-        <div>
-            <ImageToggleOnScroll 
-            primaryImage="/static/bw/img1.png"
-            secondaryImage="/static/bw/img3.jpg"/>
-        </div>
-        <div>
-            <ImageToggleOnScroll 
-            primaryImage="/static/bw/img2.png"
-            secondaryImage="/static/bw/img4.jpg"/>
-        </div>
-        </>    
     );
 };
 
